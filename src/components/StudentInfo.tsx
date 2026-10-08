@@ -1,5 +1,6 @@
-import { Drawer, DrawerDescription, DrawerTitle, DrawerTrigger, DrawerContent, DrawerClose, DrawerFooter, DrawerHeader } from "./ui/drawer";
+import { Drawer, DrawerDescription, DrawerTitle, DrawerTrigger, DrawerContent, DrawerFooter, DrawerHeader } from "./ui/drawer";
 import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
 
 export function StudentInfo() {
   return (
@@ -11,12 +12,23 @@ export function StudentInfo() {
           <DrawerHeader>
             <DrawerTitle className="text-xl font-semibold">ข้อมูลนักศึกษา</DrawerTitle>
             <DrawerDescription>Student Information</DrawerDescription>
-            <img src="public/avatar.svg"></img>
+            <img src="/avatar.png"></img>
           </DrawerHeader>
-          <div className="p-4">{/* Content here */}</div>
+          <div className="pl-4">
+            <DrawerTitle className="text-xl font-semibold">สุธนกิจ วงษ์ศรีจันทร์</DrawerTitle>
+            <DrawerDescription>นักศึกษามหาวิทยาลัยเชียงใหม่ CPE 33</DrawerDescription>
+            <div className="p-1">
+              <Badge>Hobbies</Badge> Cube, Craft, Code
+            </div>
+            <div className="p-1">
+              <Badge>Email</Badge> suthanakit_wongsrich@cmu.ac.th
+            </div>
+            <div className="p-1">
+              <Badge>Social</Badge> fb: Suthanakit Wongsrichan
+            </div>
+          </div>
           <DrawerFooter>
-            <Button>Submit</Button>
-            <DrawerClose render={<Button variant="outline" />}>Cancel</DrawerClose>
+            รหัสนักศึกษา 680610729
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

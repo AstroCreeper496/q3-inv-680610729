@@ -1,6 +1,7 @@
 import { useItemStore } from '@/store/dataStore';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { CategoryCards } from './CategoryCards';
 
 export function OverviewCards() {
   const inventory = useItemStore((state) => state.inventory);
@@ -38,52 +39,8 @@ export function OverviewCards() {
             </CardContent>
           </Card>
         </TabsContent>
-        <TabsContent value="byCategory" className="grid gap-4 md:grid-cols-6">
-
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium">Electronics</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl text-green-700 font-bold">...</div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium">Stationery</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl text-green-700 font-bold">...</div>
-            </CardContent>
-            </Card><Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium">Grocery</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl text-green-700 font-bold">...</div>
-            </CardContent>
-            </Card><Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium">Clothing</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl text-green-700 font-bold">...</div>
-            </CardContent>
-            </Card><Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium">Tools</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl text-green-700 font-bold">...</div>
-            </CardContent>
-            </Card><Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium">Other</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl text-green-700 font-bold">...</div>
-            </CardContent>
-          </Card>
+        <TabsContent value="byCategory">
+          <CategoryCards/>
         </TabsContent>
       </Tabs>
     </div>

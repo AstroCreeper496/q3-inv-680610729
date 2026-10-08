@@ -38,11 +38,11 @@ export function CategoryCards() {
         );
 
         return (
-          // Use Card component to display values by category
-          <div>
-            {category.label} - ฿{categoryValue.toFixed(2)} - {categoryUnits}{" "}
-            units
-          </div>
+          <Card>
+            <div className="p-1">{category.label}</div>
+            <div className="font-bold text-xl p-1">฿{categoryValue.toFixed(2)}</div>
+            <div className="p-1">{categoryUnits}{" "}units</div>
+          </Card>
         );
       })}
     </div>

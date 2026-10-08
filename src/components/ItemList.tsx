@@ -45,9 +45,7 @@ export function ItemList() {
                 <TableCell className="font-medium">{i.name}</TableCell>
                 <TableCell className="text-right">{i.quantity}</TableCell>
                 <TableCell className="text-right">{i.price}</TableCell>
-                <TableCell className="text-right font-semibold">
-                  ฿{(i.quantity * i.price).toFixed(2)}
-                </TableCell>
+                <TableCell className="text-right font-semibold"> ฿{(i.quantity * i.price).toFixed(2)}</TableCell>
                 <TableCell className="text-muted-foreground">{i.date}</TableCell>
                 <TableCell className="text-right">
                   <Button className="text-white bg-red-500 hover:bg-red-600 text-white" variant="ghost" size="sm">

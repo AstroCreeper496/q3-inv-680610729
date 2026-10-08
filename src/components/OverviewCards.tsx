@@ -6,6 +6,8 @@ import { CategoryCards } from './CategoryCards';
 export function OverviewCards() {
   const inventory = useItemStore((state) => state.inventory);
   const totalProducts = inventory.length;
+  const totalUnit = inventory.map((i) => i.quantity).reduce((s, a) => s + a, 0);
+  const totalStockValue = inventory.map((i) => i.quantity * i.price).reduce((s, a) => s + a, 0);
   return (
     <div>
       <Tabs defaultValue="overview">
@@ -19,7 +21,7 @@ export function OverviewCards() {
               <CardTitle className="text-sm font-medium">Total Stock Value</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl text-red-500 font-bold">฿...</div>
+              <div className="text-2xl text-red-500 font-bold">฿ {totalStockValue}</div>
             </CardContent>
           </Card>
           <Card>
@@ -35,7 +37,7 @@ export function OverviewCards() {
               <CardTitle className="text-sm font-medium">Total Units in Stock</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl text-green-700 font-bold">...</div>
+              <div className="text-2xl text-green-700 font-bold">{totalUnit}</div>
             </CardContent>
           </Card>
         </TabsContent>

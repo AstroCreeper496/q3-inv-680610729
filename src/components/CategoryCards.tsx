@@ -8,9 +8,9 @@ import {
   Wrench,
   MoreHorizontal,
 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 
-const iconMap: Record<string, React.ReactNode> = {
+const iconMap = {
   Electronics: <Laptop className="h-4 w-4" />,
   Stationery: <Pencil className="h-4 w-4" />,
   Grocery: <Apple className="h-4 w-4" />,
@@ -39,9 +39,24 @@ export function CategoryCards() {
 
         return (
           <Card>
-            <div className="p-1">{category.label}</div>
-            <div className="font-bold text-xl p-1">฿{categoryValue.toFixed(2)}</div>
-            <div className="p-1">{categoryUnits}{" "}units</div>
+            <div className="pl-3">
+              {category.label === "Electronics" 
+                ? <Laptop className="h-4 w-4" />
+                : category.label === "Stationery" 
+                ? <Pencil className="h-4 w-4" />
+                : category.label === "Grocery" 
+                ? <Apple className="h-4 w-4" />
+                : category.label === "Clothing" 
+                ? <Shirt className="h-4 w-4" />
+                : category.label === "Tools" 
+                ? <Wrench className="h-4 w-4" />
+                : category.label === "Other" 
+                ? <MoreHorizontal className="h-4 w-4" />
+                : <></>
+              }
+            {category.label}</div>
+            <div className="font-bold text-xl pl-3">฿{categoryValue.toFixed(2)}</div>
+            <div className="pl-3">{categoryUnits}{" "}units</div>
           </Card>
         );
       })}
